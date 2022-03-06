@@ -74,6 +74,11 @@ export class Header1 extends Component {
 changeSearch=(e)=>{
     this.setState({search:e.target.value});
 }
+reLoadPage=()=>{
+       if(window.location.pathname =='/'){
+    window.location.reload();
+       }
+}
     render() {
         const tongle=this.state;
         const {cart,items}=this.context;
@@ -82,7 +87,7 @@ changeSearch=(e)=>{
             <header>
                 
                 <div className='logo'>
-               <Link to='/'> <h1>CAKESOKO</h1></Link>
+               <Link to='/' onClick={this.reLoadPage}> <h1 >CAKESOKO</h1></Link>
                 </div>
                 <nav>
                 <form class="example" >
